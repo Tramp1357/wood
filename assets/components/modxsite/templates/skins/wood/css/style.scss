@@ -1,0 +1,293 @@
+@import "../libs/bootstrap/dist/scss/bootstrap";
+@import "https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic";
+@import "https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic";
+@import "partials/bscernel"; //исправления ядра bootstrap
+@import "partials/camera"; //слайдер
+@import "../libs/owl/assets/owl.carousel.css";
+@import "../../../shopmodx/vendor/AlertifyJS/build/css/alertify.css";
+@import "partials/alertify";
+
+
+html{
+    font-size: 20px;
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+    font-family:$font-family-serif;
+    font-weight: bold;
+}
+
+header{
+    min-height:11rem;
+    &.mainpage{
+        min-height:29.4rem;
+    }
+    padding-top: .7rem;
+    background: url(../img/bg_head.jpg) repeat-x;
+    .top_panel{
+        min-height:6.4rem;
+        position:relative;
+        margin-bottom: .7rem;
+        .logo{
+            height:6.4rem;
+            background:#fff;
+            .img{
+                height:100%;
+                display:block;
+                background: url(../img/logo.png) .4rem center no-repeat;
+            }
+        }
+
+        .ttl{
+            height:6.4rem;
+            background: url(../img/tp_delim_left.png) left center no-repeat,
+                        url(../img/tp_delim_right.png) right center no-repeat;
+            background-color:#fff;
+            font-size: 31px;
+            line-height: 1.355;
+            text-align: center;
+            padding-top:1.1rem;
+            color:$headings-color;
+        }
+
+        .info{
+            height:6.4rem;
+            background:#fff;
+            text-align: right;
+            padding:1.7rem .75rem 0 0;
+            .phone {
+                color:$headings-color;
+                font-size: 1.3rem;
+                .prefix{
+                    color:#b08044;
+                    font-size: .8rem;
+                }
+
+            }
+            .btn-primary-outline{
+                color: #b08044;
+                border-color: #b08044;
+                font-size: .8rem;
+                padding: 0.1rem 0.4rem;
+                box-shadow: 0 1px 1px 0 rgba(0,0,0,.4);
+                &:hover,&:focus{
+                    background-color: transparent;
+                    box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
+                }
+            }
+        }
+    }
+
+    .navbar-nav{
+        display:flex;
+        justify-content:space-around;
+        *{
+          transition: color .3s;
+        }
+        .nav-item{
+            .nav-link {
+                font-family:$font-family-serif;
+                padding:0;
+                font-size: .95rem;
+            }
+        }
+
+    }
+}
+
+.slider_wrap{
+    background:#fff;
+    padding:.7rem;
+    margin: .7rem 0;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.4);
+    .camera_commands{
+        display:none;
+    }
+}
+
+h1,.ttl_wrap{
+    margin: 2.5rem auto 1rem;
+    text-align: center;
+    .ttl {
+        background: url(../img/ttl_left.png) left center no-repeat,
+        url(../img/ttl_right.png) right center no-repeat;
+        padding: 0 14.8rem;
+    }
+}
+h1{
+    font-size: 1.3rem;
+    margin: 1rem auto;
+}
+
+.advantages{
+    text-align: center;
+    font-size:.85rem;
+    color:#594e49;
+    *{padding-top: 4.3rem;}
+    .a1{background:url(/assets/images/advantages/a1.png) center 10px no-repeat;}
+    .a2{background:url(/assets/images/advantages/a2.png) center top no-repeat;}
+    .a3{background:url(/assets/images/advantages/a3.png) center top no-repeat;}
+    .a4{background:url(/assets/images/advantages/a4.png) center top no-repeat;}
+    .a5{background:url(/assets/images/advantages/a5.png) center top no-repeat;}
+}
+
+.card_grid{
+    .card{
+        margin:.35rem;
+        border:none;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.4);
+        .card-block{
+            padding:.7rem;
+        }
+        h4.card-title {
+            font-size: .95rem;
+            text-align: center;
+            margin: 0;
+        }
+        img{
+            width:100%;
+            padding:.7rem;
+            will-change: opacity;
+            transition: opacity .3s;
+            &:hover{
+                opacity:.7;
+            }
+        }
+    }
+}
+
+.main_clients_wrap {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+    .main_clients {
+        .client_image {
+            transition: opacity .3s;
+            &:hover {
+                opacity: .7;
+            }
+
+            img {
+                width: 100%;
+                padding: 0 .5rem;
+            }
+        }
+        .owl-controls {
+            display: flex;
+            justify-content: center;
+            .owl-prev, .owl-next {
+                background: url(../img/mp_arrows.png) left top no-repeat;
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+                transition: opacity .3s;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+            .owl-next {
+                background-position: -28px 0;
+                margin-left: .4rem;
+            }
+        }
+    }
+}
+.main_delimiter{
+    background:url(../img/bottom_delim.png) center center no-repeat;
+    background-size: 100%;
+    height:.7rem;
+    margin:1rem;
+}
+
+.bottom_nav{
+    border-top:1px solid #b08044;
+    border-bottom:1px solid #b08044;
+    margin:2.7rem 0 .7rem;
+    ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style:none;
+        margin:.5px auto;
+        li{
+            margin:0;
+        }
+        @media only screen and (max-width: 768px){
+            display: block;
+        }
+    }
+
+    *{
+        transition: color .3s;
+    }
+    .nav-item{
+        &.active{
+            .nav-link {
+                color: #b08044;
+            }
+        }
+        .nav-link {
+            font-family:$font-family-serif;
+            color: #522412;
+            padding:0;
+            font-size: .95rem;
+            &:focus, &:hover {
+                color: #b08044;
+            }
+        }
+    }
+}
+
+footer{
+    .bottom_logo{
+        min-height:6rem;
+        background:url(../img/logo.png) left top no-repeat;
+    }
+    .bottom_callus{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .bottom_info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .bottom_phone{
+            font-family:$font-family-serif;
+            color:#522412;
+            font-size: 1.3rem;
+            span{
+                color:#b08044;
+                font-size: .8rem;
+            }
+        }
+        .addr_info{
+            a {
+                color: #522412;
+                font-size: .8rem;
+                font-family: $font-family-serif;
+            }
+        }
+    }
+
+    .copyright{
+        color:#594e49;
+        font-size: .6rem;
+    }
+}
+
+.breadcrumbs{
+    font-family:$font-family-serif;
+    margin-top:.8rem;
+    font-size: .8rem;
+    .last{
+        color:#b08044;
+    }
+    a{
+        color:#4f2215;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+Пару слов зачем это нужно.
+getPage — не делает пагинацию с прострелами.
+pageNav — работает только со сниппетами.
+
+Использование.
+В папку core/components/modxsmarty/smarty_plugins/
+бросаем файл function.pagination.php
+
+Создаем файл с оформлением пагинации catalog/list/pagination/index.tpl
+
+
+            {pagination items=$items current=$current_page prev_next=true assign=pagination}   
+
+            <div class="pagination">
+            {assign var=prev value=1}
+
+            {if $pagination.prev.id}
+            <a href="{$pagination.prev.href}">предыдущая</a>
+            {/if}
+           
+            {foreach from=$pagination.pages item=page name=pagination}                 
+                {if (($page.id-$prev) > 1)}
+                <span>...</span>
+                {/if}
+                {if $page.type == 'current'}
+                <span class="current">{$page.id}</span>
+                {else}
+                <a href="{$page.href}">{$page.id}</a>
+                {/if}
+            {assign var=prev value=$page.id}    
+            {/foreach} 
+
+            {if $pagination.next.id}
+            <a href="{$pagination.next.href}">следующая</a>
+            {/if}
+             
+            </div>
+
+
+В шаблоне где нужно вывести пагинацию пишем
+(Вместо 93 подставить количество елементов в выборке)
+
+
+            {assign var=items value=93}
+            {assign var=current_page value=$smarty.request.page|default:1}
+            {include file="catalog/list/pagination/index.tpl"}
+
+
+
+В результате получим такую картинку

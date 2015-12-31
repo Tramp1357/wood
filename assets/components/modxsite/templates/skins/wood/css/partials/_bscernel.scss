@@ -1,0 +1,18 @@
+$grid-gutter-width:          0 !default; //1.875rem !default; // 30px
+
+$font-family-sans-serif:     'PT Sans', sans-serif !default;
+$font-family-serif:          "Lora", serif !default;
+$font-family-base:           $font-family-sans-serif !default;
+
+$font-size-root:             20px !default;
+
+
+
+
+.btn-callus {
+    @include button-variant(#fff, #b08044, #b08044);
+}
+
+.input-required{
+    @include alert-variant(#fff, #fff, $alert-danger-text);
+}
